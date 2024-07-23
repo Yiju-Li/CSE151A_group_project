@@ -5,7 +5,7 @@ Yiju Li, yil125@ucsd.edu
 Charles Choi, dicai@ucsd.edu
 
 ## Jupyter Notebook
-The data exploration and preprocessing steps are documented in the Jupyter notebook available [at GitHub](notebooks/CSE151a_project.ipynb) or [at Google Colab](https://colab.research.google.com/drive/1OZNHYLIo4DFiLE5yqVL_Z7UiDEypC-xF?usp=sharing).
+The data exploration and preprocessing steps are documented in the Jupyter notebook available [at GitHub](notesbooks/CSE151a_project.ipynb) or [at Google Colab](https://colab.research.google.com/drive/1OZNHYLIo4DFiLE5yqVL_Z7UiDEypC-xF?usp=sharing).
 
 ## Project Description
 Our group project aims to develop a machine learning model to classify Optical Coherence Tomography (OCT) images into four categories: CNV, DME, DRUSEN, and NORMAL. Using a dataset of OCT images, the model will be trained and tested in diagnosing these retinal conditions from OCT scans.
