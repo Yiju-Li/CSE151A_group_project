@@ -60,7 +60,7 @@ The model was evaluated on both the training and test datasets. The training acc
 - **Test Loss**: `42.396453857421875`
 
 ### Fitting Graph and Future Models
-- **Fitting Graph**: The model appears to be fitting bad, with a big gap between training and test accuracy, indicating not too good generalization. Therefore, a lot of further improvements can be made.
+- **Fitting Graph**: The model appears to be fitting bad, with a big gap between training and test accuracy, indicating not too good generalization(Overfitting). Therefore, a lot of further improvements can be made.
 - **Future Models**: We are considering the following approaches to improve our model:
   1. **Data Augmentation**: To increase the diversity of the training data.
   2. **Deeper Network Architectures**: To capture more complex features.
