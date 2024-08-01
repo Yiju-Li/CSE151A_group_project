@@ -231,46 +231,40 @@ The model was compiled with the Adam optimizer, sparse categorical cross-entropy
 - Precision, recall, and F1-scores were highest among the three models.
 - The overall accuracy was 85%.
 
-## Jupyter Notebook
-The data exploration and preprocessing steps are documented in the Jupyter notebook available [at GitHub](notesbooks/CSE151a_project.ipynb) or [at Google Colab](https://colab.research.google.com/drive/1OZNHYLIo4DFiLE5yqVL_Z7UiDEypC-xF?usp=sharing).
+## Discussion
 
->>>>>>> Stashed changes
-## Project Description
+### Data Exploration
 
-Our group project aims to develop a machine learning model to classify Optical Coherence Tomography (OCT) images into four categories: CNE, DME, DRUSEN, and NORMAL. Using a dataset of OCT images, the model will be trained and tested in diagnosing these retinal conditions from OCT scans.
+In the data exploration stage, we first understood the basic characteristics of the dataset, including the number of images, the number of classes, and the class distribution. This step is crucial for subsequent preprocessing and model selection because it helps us identify any potential issues in the dataset, such as class imbalance. During exploration, we found that the class distribution was relatively even, meaning our model would not require extensive adjustments to handle class imbalance. Additionally, by displaying example images for each class, we gained a more intuitive understanding of the data's characteristics and variability.
 
-## Repository Structure
+### Data Preprocessing
 
-```
-.
-├── notebooks/
-│   └── CSE151a_project.ipynb
-├── README.md
-```
+In the data preprocessing stage, we primarily performed image cropping and tensor conversion. Image cropping resized all images to a consistent size (496x496 pixels), which is essential for ensuring consistency in the data fed into the model. Tensor conversion transformed the image data into a format that the model can process and included normalization. This step is critical because the quality of input data directly affects the model's performance. Through cropping and normalization, we ensured data consistency and standardization, laying a solid foundation for model training.
 
-## Data Exploration
+### Model 1
 
-The data exploration step includes evaluating the dataset, determining the number of observations, and analyzing the data distribution. The key points include:
-- Number of classes: 4
-- Total number of images: 109,309
-- Image size distribution:
-  - (512, 496): 58,037 images
-  - (768, 496): 29,749 images
-  - (1536, 496): 11,512 images
-  - (1024, 496): 1,329 images
-  - Other sizes: Few images
+Model 1 is a simple Convolutional Neural Network (CNN) consisting of two convolutional layers and one fully connected layer. Although the model architecture is simple, it failed to effectively capture the data's complexity, resulting in low precision, recall, and F1 scores across all classes. This indicates that Model 1 is underfitting, as its structure is too simple to adequately learn and represent the patterns and features in the data.
 
-Example images from each class and the image size distribution are plotted in the Jupyter notebook.
+### Model 2
 
-## Data Preprocessing
+Model 2's design is more complex than Model 1, incorporating additional convolutional and pooling layers. We made these changes to better capture detailed features in the images. By adding more convolutional and pooling layers, we aimed to extract more complex and abstract features, thereby improving the model's classification capability. Model 1's poor performance was primarily due to its overly simple structure, which could not adequately represent the data's patterns. By increasing the complexity of the model with more layers, we endowed it with greater expressive power.
 
-The preprocessing steps involve:
-1. **Cropping**: Cropping images to a uniform size of (496, 496) pixels.
+The outcomes of these changes were evident in the significant improvement in performance metrics, such as precision, recall, and F1 scores, compared to Model 1. The additional layers enabled Model 2 to classify more accurately. Moreover, the extra convolutional layers allowed the model to extract more hierarchical features, leading to a better understanding of the image content. Convolutional layers work by capturing various local features through different filters (convolution kernels) scanning the input image. These features are then passed and combined through layers, forming a global understanding of the image. Additionally, pooling layers reduce the size of feature maps through subsampling while retaining important features. This not only reduces the computational load but also enhances the model's translational invariance, making it more robust to changes in image position.
 
+### Model 3
 
-The cropped images are saved back to their original paths.
+Building on Model 2, Model 3 further incorporates batch normalization and dropout layers to enhance performance and stability. Introducing batch normalization accelerates the training process, stabilizes model training, and reduces internal covariate shift. Adding dropout layers, a regularization technique, helps prevent overfitting by randomly dropping a proportion of neurons during training, thus enhancing the model's generalization ability.
 
+The outcomes of these changes include increased model stability and enhanced generalization. Batch normalization helped accelerate training and made the training process more stable. Dropout layers prevented the model from over-relying on certain features by randomly dropping neurons, which improved its performance on unseen data. The significant performance improvement was reflected in Model 3 achieving an accuracy of 85%, a further enhancement over Model 2, indicating that these modifications substantially boosted the model's performance.
 
-## Jupyter Notebook
+Batch normalization works by normalizing the activations at each layer, maintaining stable output mean and variance, and reducing the variation in input distribution between layers. This accelerates training and enhances model stability. Dropout, on the other hand, prevents neurons from over-relying on their neighbors by randomly dropping them during training. This process forces the model to learn more robust features, increasing randomness and preventing overfitting, thereby improving generalization.
 
-The data exploration and preprocessing steps are documented in the Jupyter notebook available [at github](notebooks/CSE151a_project.ipynb) or [at google colab](https://colab.research.google.com/drive/1OZNHYLIo4DFiLE5yqVL_Z7UiDEypC-xF?usp=sharing).
+### Possible Limitations & Future Improvements
+
+Although Model 3 significantly outperformed the other models, several factors should still be considered.
+
+First, the size and diversity of the dataset significantly impact model performance. If the dataset is small or lacks diversity, it may result in insufficient model generalization. A model trained on a limited dataset may not capture the full range of variability in real-world data, leading to suboptimal performance when exposed to new, unseen data.
+
+Second, while increasing model complexity can enhance performance, it also requires more training time and computational resources. Complex models with many layers and parameters take longer to train and demand more powerful hardware. Additionally, overly complex models may perform poorly on different datasets. Such models can become highly specialized to the training data and may not generalize well to other datasets with different characteristics, leading to overfitting.
+
+Finally, despite the current model's good performance, future improvements may require the introduction of more advanced techniques to further enhance performance. Techniques such as transfer learning, where a model pre-trained on a large dataset is fine-tuned on a smaller, task-specific dataset, can significantly boost performance. Additionally, data augmentation, which involves generating new training samples by applying transformations to the existing data, can help improve model robustness and generalization. These advanced methods can address some of the limitations of the current approach and lead to even better results.
