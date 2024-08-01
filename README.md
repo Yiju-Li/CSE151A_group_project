@@ -4,8 +4,6 @@
 Yiju Li, yil125@ucsd.edu
 Charles Choi, dicai@ucsd.edu
 
-<<<<<<< Updated upstream
-=======
 ## Abstraction
 In recent years, the integration of advancements in medical imaging technology and machine learning has brought unprecedented innovation to medical diagnostics. Our team project aims to develop a machine learning model to classify Optical Coherence Tomography (OCT) images into four categories: Choroidal Neovascularization (CNV), Diabetic Macular Edema (DME), Drusen, and Normal. By utilizing a comprehensive dataset of OCT images, we hope to improve the accuracy and efficiency of diagnosing these retinal conditions. This project was chosen to address the pressing need for efficient diagnostic tools in ophthalmology, reduce the burden on medical professionals, and provide better care for patients. This project demonstrates the immense potential of artificial intelligence in medical diagnostics, offering not only technical innovation but also the ability to broadly improve public health, especially in areas with limited medical resources. Our goal is to advance medical imaging technology and contribute to better global health outcomes through information technology.
 
