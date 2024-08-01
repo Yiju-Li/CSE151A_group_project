@@ -268,3 +268,19 @@ First, the size and diversity of the dataset significantly impact model performa
 Second, while increasing model complexity can enhance performance, it also requires more training time and computational resources. Complex models with many layers and parameters take longer to train and demand more powerful hardware. Additionally, overly complex models may perform poorly on different datasets. Such models can become highly specialized to the training data and may not generalize well to other datasets with different characteristics, leading to overfitting.
 
 Finally, despite the current model's good performance, future improvements may require the introduction of more advanced techniques to further enhance performance. Techniques such as transfer learning, where a model pre-trained on a large dataset is fine-tuned on a smaller, task-specific dataset, can significantly boost performance. Additionally, data augmentation, which involves generating new training samples by applying transformations to the existing data, can help improve model robustness and generalization. These advanced methods can address some of the limitations of the current approach and lead to even better results.
+
+### Conclusion
+Through the development and refinement of our convolutional neural network models, we have demonstrated the significant potential of artificial intelligence in medical diagnostics. Model 3, our most advanced model, achieved the highest accuracy, showcasing the importance of incorporating advanced techniques such as batch normalization and dropout for enhanced performance and generalization.
+
+Despite these promising results, there are areas for future improvement. Expanding the dataset and incorporating transfer learning and data augmentation could further enhance model robustness and accuracy. Additionally, exploring other advanced architectures and fine-tuning hyperparameters will likely yield even better results.
+
+This project was conducted as part of CSE151A, a course that has profoundly impacted our understanding and application of machine learning. The knowledge and skills acquired in this course were instrumental in the successful execution of this project. CSE151A has not only equipped us with the technical expertise needed to develop sophisticated machine learning models but also inspired us to explore the transformative possibilities of AI in real-world applications. We are grateful for the guidance and support provided by our Prof. Edwin Solares, TAs and peers throughout this course, which has been a pivotal part of this academic journey.
+
+### Statement of Contribution
+- Yiju Li: Coder, Writer
+- Charles Choi: Coder, Writer
+
+Both Yiju Li and Charles Choi worked collaboratively on all aspects of the project. There was no single team leader, as responsibilities were shared equally. Each member actively participated in coding, data analysis, writing, and providing feedback.
+
+### Link to all codes
+All code has been uploaded in the form of Jupyter notebooks in the `notebooks` folder under the root directory in this repository.
